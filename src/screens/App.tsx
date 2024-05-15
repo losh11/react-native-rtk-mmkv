@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {SafeAreaView, StyleSheet, Text, View} from 'react-native';
 import {Provider} from 'react-redux';
 import {pStore, store} from '../store';
 import {PersistGate} from 'redux-persist/integration/react';
@@ -17,7 +17,9 @@ const App: React.FC = () => {
 const Numpad: React.FC = () => {
   return (
     <View style={styles.container}>
-      <Text>hello</Text>
+      <SafeAreaView>
+        <Text style={styles.text}>hello</Text>
+      </SafeAreaView>
     </View>
   );
 };
@@ -25,6 +27,11 @@ const Numpad: React.FC = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: 'cornsilk',
+  },
+  text: {
+    textAlign: 'center',
+    fontSize: 40,
   },
 });
 
